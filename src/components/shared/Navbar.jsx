@@ -1,9 +1,12 @@
+"use client"
 import Link from "next/link";
 import NavLink from "./NavLink";
+import { usePathname } from "next/navigation";
 
 
 const Navbar = () => {
-  
+  const pathname = usePathname();
+  const isActive = pathname === "/login";
   return (
     <nav className="bg-cyan-50/30 shadow-sm">
       <div className="navbar container mx-auto">
@@ -30,9 +33,9 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn border-2 border-[#00ACC1] text-[#00ACC1] hover:bg-[#00ACC1] hover:text-white rounded-full px-4 py-2 font-semibold transition-all shadow-md">
+      <Link href={"/login"} className={`btn border-2 border-[#00ACC1] text-[#00ACC1] hover:bg-[#00ACC1] hover:text-white rounded-full px-4 py-2 font-semibold transition-all shadow-md ${isActive ?"bg-[#00ACC1] text-white" : " " }`}>
           Login
-        </a>
+        </Link>
       </div>
     </div>
     </nav>

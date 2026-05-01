@@ -1,9 +1,10 @@
+import HomeDesign from "@/components/HomeDesign";
 
 
 const Home = () => {
   return (
     <div>
-      home
+      <HomeDesign />
     </div>
   );
 };
