@@ -23,7 +23,7 @@ const Navbar = () => {
             <li><NavLink href={"/myProfile"}>MyProfile</NavLink></li>
           </ul>
         </div>
-        <Link className="text-3xl font-bold text-[#F09633]" href={"/"}>Sun<span className="text-[#34B0BD]">Cart</span></Link>
+        <Link className="text-xl sm:text-3xl font-bold text-[#F09633]" href={"/"}>Sun<span className="text-[#34B0BD]">Cart</span></Link>
       </div>
       <div className="navbar-center hidden sm:flex">
         <ul className="flex gap-5 items-center px-1">
