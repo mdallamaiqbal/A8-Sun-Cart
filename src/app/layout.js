@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
+import { Toaster } from "react-hot-toast";
 
 
 
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main className="flex-grow">
            {children}
+           <Toaster />
         </main>
         <Footer />
         </body>

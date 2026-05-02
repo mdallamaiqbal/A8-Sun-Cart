@@ -1,12 +1,26 @@
 "use client"
 import Link from "next/link";
 import { useForm } from "react-hook-form";
-
+import toast from "react-hot-toast";
+import { authClient } from "@/lib/auth-client";
 
 const LoginPage = () => {
-    const {register,handleSubmit,formState: {errors}} = useForm();
-    const handleLoginFunc=(data)=>{
-       console.log(data)
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const handleLoginFunc = async (data) => {
+        const { name, email, password, photo } = data;
+        const { data: res, error } = await authClient.signIn.email({
+            name: name,
+            email: email,
+            password: password,
+            image: photo,
+            callbackURL: "/",
+        });
+        if (error) {
+            toast.error(error.message)
+        }
+        if (res) {
+            toast.success("Login Successful");
+        }
     }
     return (
         <div className="container mx-auto min-h-[80vh] bg-[#F9F6E9] my-10 flex justify-center items-center">
@@ -15,14 +29,14 @@ const LoginPage = () => {
                 <hr />
                 <form onSubmit={handleSubmit(handleLoginFunc)} className="mt-4">
                     <fieldset className="fieldset">
-                    <legend className="fieldset-legend text-white text-base sm:text-xl">Email</legend>
-                    <input type="email" {...register ("email" ,{required: "Need Email!"})}  className="input text-[#34B0BD]" placeholder="Email here" />
-                    {errors.email && <p className="text-red-500">{errors.email.message}</p>}
+                        <legend className="fieldset-legend text-white text-base sm:text-xl">Email</legend>
+                        <input type="email" {...register("email", { required: "Need Email!" })} className="input text-[#34B0BD]" placeholder="Email here" />
+                        {errors.email && <p className="text-red-500">{errors.email.message}</p>}
                     </fieldset>
                     <fieldset className="fieldset">
-                    <legend className="fieldset-legend text-white text-base sm:text-xl">Password</legend>
-                    <input type="password" {...register ("password", {required: "Need Password!"})}  className="input text-[#34B0BD]" placeholder="Password here" />
-                    {errors.password && <p className="text-red-500">{errors.password.message}</p>}
+                        <legend className="fieldset-legend text-white text-base sm:text-xl">Password</legend>
+                        <input type="password" {...register("password", { required: "Need Password!" })} className="input text-[#34B0BD]" placeholder="Password here" />
+                        {errors.password && <p className="text-red-500">{errors.password.message}</p>}
                     </fieldset>
                     <button className="btn text-base sm:text-lg w-full mt-4 text-white bg-[#34B0BD]">Login</button>
                 </form>
