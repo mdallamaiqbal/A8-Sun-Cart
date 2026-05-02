@@ -44,8 +44,6 @@ Google social login
 Protected routes for users
 
 📦 Future Improvements
-💳 Payment gateway integration
-❤️ Wishlist system
 ⭐ Product reviews & ratings
 📊 Admin dashboard
 🔔 Notification system
