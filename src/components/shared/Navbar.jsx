@@ -2,9 +2,13 @@
 import Link from "next/link";
 import NavLink from "./NavLink";
 import { usePathname } from "next/navigation";
-
+import { authClient } from "@/lib/auth-client";
+import Image from "next/image";
+import userImg from "@/assets/avatar.png"
 
 const Navbar = () => {
+  const { data: session } = authClient.useSession();
+  const user = session?.user;
   const pathname = usePathname();
   const isActive = pathname === "/login";
   return (
@@ -33,6 +37,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
+      <Image src={user?.image || userImg} alt="User" width={60} height={60} />
       <Link href={"/login"} className={`btn border-2 border-[#00ACC1] text-[#00ACC1] hover:bg-[#00ACC1] hover:text-white rounded-full px-4 py-2 font-semibold transition-all shadow-md ${isActive ?"bg-[#00ACC1] text-white" : " " }`}>
           Login
         </Link>
