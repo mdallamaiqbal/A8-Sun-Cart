@@ -8,7 +8,7 @@ import { IoStar } from 'react-icons/io5';
 const ProductCard = ({ product }) => {
     return (
         <div>
-            <div className="card bg-[#F8F3E7] h-full flex flex-col shadow-sm">
+            <div className="card bg-white  shadow-md hover:shadow-xl transition-all duration-300 border border-orange-100 p-5 rounded-xl h-full flex flex-col ">
                 <figure className='shadow bg-white rounded-2xl w-[90%] sm:w-[80%]  mx-auto mt-5'>
                     <Image src={product.image} width={300} height={250} className=''  alt={product.name} />
                 </figure>

@@ -20,7 +20,7 @@ const ProductDetailsPage =async ({params}) => {
     console.log(product)
     return (
         <div className="max-w-3xl mx-auto my-10">
-            <div className="card bg-[#F8F3E7] h-full flex flex-col shadow-sm">
+            <div className="card bg-white  shadow-md hover:shadow-xl transition-all duration-300 border border-orange-100 p-5 rounded-xl h-full flex flex-col ">
                 <figure className='shadow bg-white rounded-2xl w-[90%] sm:w-[80%]  mx-auto mt-5'>
                     <Image src={product.image} width={300} height={250} className=''  alt={product.name} />
                 </figure>

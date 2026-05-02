@@ -22,9 +22,16 @@ const LoginPage = () => {
             toast.success("Login Successful");
         }
     }
+
+    const handleGoogleSignin = async () => {
+        const data = await authClient.signIn.social({
+            provider: "google",
+        });
+      console.log(data)
+    }
     return (
-        <div className="container mx-auto min-h-[80vh] bg-[#F9F6E9] my-10 flex justify-center items-center">
-            <div className="w-96 mx-auto py-5 px-5 sm:px-10 rounded-2xl text-white bg-[#34B0BD]">
+        <div className=" min-h-[80vh] bg-[#F9F6E9] my-10 flex justify-center items-center">
+            <div className="py-5 px-5 sm:px-10 rounded-2xl text-white bg-[#34B0BD]">
                 <h3 className="mb-3 font-semibold text-lg sm:text-2xl text-center">Login Your Account</h3>
                 <hr />
                 <form onSubmit={handleSubmit(handleLoginFunc)} className="mt-4">
@@ -42,7 +49,7 @@ const LoginPage = () => {
                 </form>
                 <div className="flex flex-col sm:flex-row justify-center sm:gap-2">
                     <Link href={'/register'} className="btn btn-outline mt-4 rounded-full">Create Account</Link>
-                    <button className="btn btn-outline mt-4 rounded-full">Login with google</button>
+                    <button onClick={handleGoogleSignin} className="btn btn-outline mt-4 rounded-full">Login with google</button>
                 </div>
             </div>
         </div>
