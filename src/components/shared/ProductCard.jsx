@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import { IoIosStarHalf } from 'react-icons/io';
 import { IoStar } from 'react-icons/io5';
 import { MdOutlineStarRate } from 'react-icons/md';
 
@@ -15,7 +16,11 @@ const ProductCard = ({ product }) => {
                     <p className='text-[#00ACC1] text-sm sm:text-base'>{product.description}</p>
                     <ul className='flex justify-between items-center font-bold text-[#00ACC1] text-lg sm:text-2xl'>
                         <li>${product.price}</li>
-                        <li className='flex items-center gap-1 leading-none'><IoStar  className="text-amber-500" /><span className='relative top-0.5'>{product.rating}</span></li>
+                        <li className='flex items-center gap-1 leading-none'>
+                            <IoStar  className="text-amber-500 text-base sm:text-xl" />
+                            <IoStar  className="text-amber-500 text-base sm:text-xl" />
+                            <IoIosStarHalf className="text-amber-500 text-base sm:text-xl" />
+                            <span className='relative top-0.5'>{product.rating}</span></li>
                     </ul>
                     <div className="card-actions justify-end">
                         <button className="btn bg-[#F09633] text-white">View Details</button>
