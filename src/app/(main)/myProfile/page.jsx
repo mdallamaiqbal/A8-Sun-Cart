@@ -1,4 +1,7 @@
 
+export const metadata = {
+  title: "Sun-Cart - MyProfile",
+};
 
 const MyProfile = () => {
     return (

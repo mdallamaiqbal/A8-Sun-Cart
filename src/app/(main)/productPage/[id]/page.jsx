@@ -9,6 +9,10 @@ const getProductsDataId = async (id) => {
   const product = data.find(p => p.id == id);
   return product;
 }
+export const metadata = {
+  title: "Sun-Cart - Products Details",
+};
+
 
 const ProductDetailsPage =async ({params}) => {
     const {id} =await params;

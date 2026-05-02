@@ -5,6 +5,9 @@ const getProductsData = async () => {
   const data = await res.json();
   return data;
 }
+export const metadata = {
+  title: "Sun-Cart - Products",
+};
 
 
 const ProductsPage =async() => {
