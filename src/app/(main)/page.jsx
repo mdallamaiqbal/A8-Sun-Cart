@@ -1,6 +1,7 @@
 import HomeDesign from "@/components/HomeDesign";
 import ProductCard from "@/components/shared/ProductCard";
 import SummerCare from "@/components/shared/SummerCare";
+import TopBrands from "@/components/shared/TopBrands";
 import Link from "next/link";
 
 const getProductsData = async () => {
@@ -24,6 +25,8 @@ const Home = async () => {
         </div>
         <div className="flex justify-center mt-10"><Link href={"/products"} className="btn bg-[#F09633] text-white">More Products</Link></div>
        <SummerCare />
+
+       <TopBrands />
       </div>
 
     </div>

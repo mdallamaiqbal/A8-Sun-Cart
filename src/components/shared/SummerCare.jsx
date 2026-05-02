@@ -46,7 +46,7 @@ const summerTips = [
 
 export default function SummerCare() {
   return (
-   <div className="min-h-screen flex justify-center items-center p-5">
+   <div className="mt-10 flex justify-center items-center p-5">
   <div className="w-full max-w-5xl bg-white/80 shadow-xl rounded-2xl p-6">
 
     <h1 className="text-3xl font-bold text-center mb-8 text-orange-500">
